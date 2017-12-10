@@ -15,7 +15,7 @@
         <header  th:fragment="header">
             <ul class="nav navbar-default nav-pills">
                 <li><a th:href="@{/}">Etusivu</a></li>
-                <li th:each="category : ${categories}">
+                 <li th:each="category : ${categories}">
                     <span th:href="@{/${category.name}}"></span>
                 </li>
                 <li><a th:href="@{/new}">Lisää uusi</a></li>
