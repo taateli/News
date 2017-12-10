@@ -28,7 +28,7 @@ public class CategoryController {
     public String list(Model model) {
         model.addAttribute("categories", categoryRepository.findAll());
 
-        return "/category";
+        return "category";
     }
 
     @PostMapping("/categories")

@@ -49,7 +49,7 @@ public class NewsItemController {
         return "redirect:/news";
     }
     
-        @GetMapping("/news")
+    @GetMapping("/news")
     public String news(Model model) {
         model.addAttribute("categories", categoryRepository.findAll());
         model.addAttribute("newsItems", newsItemRepository.findAll());
@@ -88,15 +88,15 @@ public class NewsItemController {
         newsItem.setIngres(ingres);
         newsItem.setText(text);
 
-        List<Writer> authorList = newsService.createAuthorList(writers);
+        List<Writer> writerList = newsService.createAuthorList(writers);
         List<Category> categoryList = newsService.createCategoryList(categories);
 
-        newsItem.setWriters(authorList);
+        newsItem.setWriters(writerList);
         newsItem.setCategories(categoryList);
         newsItem.setPicture(fileService.create(file));
 
         newsItemRepository.save(newsItem);
-        newsService.assignNewsItemToAuthors(newsItem, authorList);
+        newsService.assignNewsItemToAuthors(newsItem, writerList);
         newsService.assignNewsItemToCategories(newsItem, categoryList);
 
         return "redirect:/";

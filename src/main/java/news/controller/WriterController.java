@@ -19,7 +19,7 @@ public class WriterController {
     public String list(Model model) {
         model.addAttribute("writers", writerRepository.findAll());
 
-        return "/writer";
+        return "writer";
     }
 
     @PostMapping("/writer")
