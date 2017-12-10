@@ -1,24 +1,27 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Home</title>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-        <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="/webjars/jquery/3.2.0/js/jquery.min.js"></script>
 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+    <head>
+        <title>Header template</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
 
         <header  th:fragment="header">
-           
             <ul class="nav navbar-default nav-pills">
-                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/}">Etusivu</a></li>
                 <li th:each="category : ${categories}">
-                <span th:href="@{/${category.name}}"></span>
-            </li>            
+                    <span th:href="@{/${category.name}}"></span>
+                </li>
+                <li><a th:href="@{/new}">Lisää uusi</a></li>
+                <li><a th:href="@{/writer}">Lisää kirjoittaja</a></li>
+                <li><a th:href="@{/categories}">Lisää kategoria</a></li>
             </ul>
         </header>
-
-    </body>    
+    </body>
 </html>

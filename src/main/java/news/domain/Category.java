@@ -1,9 +1,10 @@
 
 package news.domain;
-
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.Lob;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,10 +16,36 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Data
 @Entity
 public class Category extends AbstractPersistable<Long> {
-    
-    @ManyToMany()
+
+    private String name;
+
+    @ManyToMany 
     private List<NewsItem> newsItems;
     
-    @Lob
-    private String name;
+    @Id
+    private Long id;
+
+    public Category(String name) {
+        this.name = name;
+    }
+
+    public List<NewsItem> getNews() {
+        if (this.newsItems == null) {
+            this.newsItems = new ArrayList<NewsItem>();
+        }
+        return this.newsItems;
+    }
+
+    public void setNews(List<NewsItem> news) {
+        this.newsItems = news;
+    }
+
+    public void addNewsItem(NewsItem newsItem) {
+        for (NewsItem newsItem2 : getNews()) {
+            if (newsItem2.getId() == newsItem.getId()) {
+                return;
+            }
+        }
+        getNews().add(newsItem);
+    }
 }

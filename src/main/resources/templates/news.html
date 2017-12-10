@@ -2,14 +2,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
-        <title>Exam</title>
+        <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" th:href="@{/css/site.css}"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
 
         <header th:replace="fragments/header :: header">
             <p>header with links etc</p>
         </header>
-    
-        <h1>Top News!</h1>
+
+
+        <div class="container">
+
+            <div class="col-md-6 col-md-offset-2">
+
+                <div class="page-header">
+                    <h1>Uutiset</h1>
+                </div>
+
+                <div th:each="newsItem : ${newsItems}">
+                    <a th:href="@{/news/{id}(id=${newsItem.id})}">
+                    <h2 th:text="${newsItem.topic}"></h2></a>
+                    <p th:text="${newsItem.ingres}"></p>
+                    <p class="text-right"><img class="img-thumbnail" th:src="@{/pictures/{id}/content(id=${newsItem.id})}"/></p>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
     </body>
 </html>

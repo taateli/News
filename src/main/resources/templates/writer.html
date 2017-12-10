@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Writers</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+
+        <div class ="container">
+
+            <div class="col-md-6 col-md-offset-2">    
+
+                <h2 class="text-center">Lisää uusi kirjoittaja</h2>
+
+                <form th:action="@{/writer}" method="POST">
+
+                    <div class="form-group">
+                        <label for="name">Nimi</label>
+                        <input type="text" class="form-control" name="name"/>
+
+                    </div>
+                    <input type="submit"/>            
+                </form>
+            
+            <ul class="list-group" th:each="writer : ${writers}">
+                <li class="list-group" th:text="${writer.name}"></li>
+            </ul>     
+        </div>
+        </div>
+    </body>
+</html>

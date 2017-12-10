@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" th:href="@{/css/site.css}"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+
+        <div class="container">
+
+
+
+            <div class="page-header">
+                <h1><span th:text="${newsItem.topic}">Otsikko</span></h1>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2><span th:text="${newsItem.ingres}">Ingressi</span></h2>
+                    <h3>Kirjoittajat</h3>
+                    <ul>
+                        <li th:each="writer : ${newsItem.writers}">
+                            <span th:text="${writer.name}"></span>
+                        </li>
+                    </ul>
+
+                    <h3>Kategoriat</h3>
+                    <ul>
+                        <li th:each="category : ${newsItem.categories}">
+                            <span th:text="${category.name}"></span>
+                        </li>
+                    </ul>
+                    <p><span th:text="${newsItem.text}">Teksti</span></p>
+                </div>
+
+                <div class="col-sm-4">
+                    <img th:src="@{/pictures/{id}/content(id = ${newsItem.id})}"/>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+</html>
