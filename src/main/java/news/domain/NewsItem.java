@@ -41,7 +41,7 @@ public class NewsItem extends AbstractPersistable<Long> {
     private LocalDateTime date;
     
     
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne //(fetch = FetchType.EAGER)
     private FileObject picture;
     
 }
