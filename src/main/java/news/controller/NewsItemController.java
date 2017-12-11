@@ -72,7 +72,9 @@ public class NewsItemController {
 
     @GetMapping("/news/{id}")
     public String showNewsItem(@PathVariable Long id, Model model) {
-        model.addAttribute("newsItem", newsItemRepository.getOne(id));
+        NewsItem newsItem = newsItemRepository.getOne(id);
+        System.out.println(newsItem);
+        model.addAttribute("newsItem", newsItem);
         return "newsItem";
     }
 
