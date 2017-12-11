@@ -1,0 +1,14 @@
+Toteutumatta jääneet ominaisuudet:
+-Uutisten muokaaminen hallintapaneelissa
+-Kategoriat navigaatiopalkissa
+-Uutisten listaaminen julkaisuajan perusteella
+-Edellisen viikon uutisten listaaminen
+-Kuvat ei toimi herokussa (ei osattu edes pajassa auttaa)
+
+
+Parannusehdotukset:
+- Ulkoasu pitäisi putsata
+- Navigaatiopalkin vain adminille tarkoitetut ominaisuuden piiloon kirjautumisen taakse
+- Testaus Testaus Testaus!
+- Toteuttamatta jääneiden ominaisuuksien toteuttaminen.
+- Parempi Navigaatio ja käyttöliittymä.

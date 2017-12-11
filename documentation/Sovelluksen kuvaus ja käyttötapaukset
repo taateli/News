@@ -1,0 +1,23 @@
+Sovellus mahdollistaa adminille uusien uutiskategorioiden, kirjoittajien ja uusien uutisten tallentamisen järjestelmään. Käyttäjälle mahdollista lukea uutisia ja selata uusimpia uutisia
+
+Käyttötapaus 1:
+
+Käyttäjä selaa uutisia järjestyksessä uusimmasta vanhimpaan ja haluaa katsoa jonkun yksittäisen kokonaisen uutisen.
+
+Käyttötapaus 2:
+
+Käyttäjä klikkaa yksittäisen uutisen otsikkoa jolloin hän näkee vain sen uutisen kokonaisuudessaan
+
+Käyttötapaus 3:
+
+Admin haluaa lisätä uuden uutiskategorian, painaa lisää uusi kategoria navigoinnista ja lisää uuden kategorian lomakkeella
+
+Käyttötapaus 4:
+
+Admin haluaa lisätä uuden uutis kirjoittajan, painaa lisää uusi kirjoittaja navigoinnista ja lisää uuden kirjoittajan lomakkeella
+
+Käyttötapaus 5:
+
+Admin haluaa lisätä uuden uutisen, klikkaa lisää uusi painiketta jolloin avautuu lomake jolla voi lisätä uuden uutisen.
+
+
